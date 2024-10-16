@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>pixpaint</title>
+  <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAgMAAADxkFD+AAAACVBMVEUAAAAAAAD///+D3c/SAAAAA3RSTlMA//9EUNYhAAAA1klEQVR4nHWRMc7DIAyFH0gMyc4RMvQWHMEDRlWmjFVPwSGaPUulXznl/wxJqg61BPr8BA/bAL/CqeYDlZEaBX3ub+niXDHmLm7cV8M42z7Z4SZiMCzMMhzvuTsivbyhOJ3pRQu3hLKNghcxhQeoxYbVbKeGZovQUbkOXFNIB95kYGJIf5f4spNB+ExyCV58PhCCVZcTJ00dM8ZSQ0PW8YeOsXVF/ewKhgPrD4U64JWTuvdzK+e0WbfATfVpngy/79UaPyPIhXG5UOs1+HKJ/nML29fv/APH1zFaX2xTPQAAAABJRU5ErkJggg==">
+  
+  
+  <script type="module" crossorigin src="/assets/index.094aad7e.js"></script>
+  <link rel="stylesheet" href="/assets/index.1a5a33de.css">
+</head>
+
+<body>
+  <!--   Hello world -->
+  <div id="controlPanel">
+
+    <div id="buttonPanel">
+
+      <div class="row">
+        <button id="pen" class="active"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMA/1uRIrUAAABqSURBVHicY2DADRpABOMHMPkHRDLXgUl7EMnGDyJ5+MCkDIiUsACRFmDSoABEJjwAkQ8PgMjDIJKxGWQmczuIZGcHGwM2gE8GwxgDsDEJCGMKwcbUgx31H0KCXfkPTP4Ak2C3MhxAItEBALPiF2us1yr5AAAAAElFTkSuQmCC"></button>
+        
+        <button id="dots"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEX///8AAABVwtN+AAAAG0lEQVR4nGNgIAFYgMkaMPkPg6xBUkNdQEV7AQLACMXi90owAAAAAElFTkSuQmCC"></button>
+        <button id="brush"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMA/1uRIrUAAABQSURBVHicY2DAAh6AyQ9g8gc1ScY/IJL5P4hk/98AJOWh5AE4yf//AZiNTvL/VQCSUlNBpNDUBCApLOsAJI01QbrUrUFm2oNN/tiAzVMQAADI7SbPdeuOWgAAAABJRU5ErkJggg=="></button>
+        <button id="erase"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMA/1uRIrUAAABjSURBVHiclc6xDYAgFIThn1DQGGoLEtdgHEfADZjAmV5i4Ro4Cb5cZesVX3WXHPxNnNMgyUx0i6wkt5HdQXGN1QhGNWLnMBI83Udc3Ufhhm3OUy6wEousssldDnVM9t+Pv3kBWJEgq2yW040AAAAASUVORK5CYII="></button>
+        
+<!--         <button id="spray"><img src="assets/icons/spray.png"></button> -->
+<!--         <button id="crystal"><img src="assets/icons/crystal.png"></button> -->
+        
+        </button>
+      </div>
+      <div class="row">
+        
+<!--         <button id="nudge"><img src="assets/icons/nudge.png"></button> -->
+        <button id="text" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAMAAAC7IEhfAAAA2FBMVEUAAAAAAABVVVWAgIBpaWk2NjZ0dHT///8MDAxOTk7////y8vInJyeZmZkqKir///9AQEBoaGjBwcFiYmIZGRlWVlaAgIBycnLl5eVUVFTo6OiCgoJ5eXn///9gYGAWFhb5+fn////Jycmrq6tvb2////////8sLCw9PT1CQkIqKir///9kZGTS0tL///////+AgIBsbGzv7++VlZVycnJ2dnawsLDh4eHT09MxMTEmJib///////+qqqq8vLxubm76+vpRUVH///9kZGTf399fX183Nzc7Ozss+gcAAAAASHRSTlMA/8AIhuxLVP7O4//3///O4oT/nPz/FNP/wuf/Nzf////B//9nEsL0/9/1mJf/9eIS////XDhh/67w/7/v+P9o//84yv+j6/+AaYtWAAAA6klEQVR4nO3RWU/CQBQF4HMpqxQEBNkXAVEQZafssgj+/3/kXIiBJu3MhFe4D23P5MtJ5ha4z3HIY2hC8mo68ulC8gc0XFDA0INeIVFY7cwjjGgWUhR4lLsYmXGWCXXhk5EUz5QSBp+R5sqMqjAL5BjmVbCAIkriXa7IXQx4QZUra3JYxyvQeBNf7xLXpBbwARTbXPkpK2wDX+igyz+8J4O26Ws6GrjD4WhsWZORmKlIM1cndjM/hcWSK1du8Puc1mWRNy7OPKftdseVP85wf5kL5LwhPraf8HXI0oAHPvp1cnb5v8xr4Y3NHwD/DYCPLgajAAAAAElFTkSuQmCC"></button>
+
+        <button id="line"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEX///8AAABVwtN+AAAAOklEQVR4nGNgQAMHQAQjmGRuAJHsYGE+MMkDJmXApAWYLACTD7BrYkPSSoQmZgZ0+/BqYmzA50gcAAD29guzfz0ZQwAAAABJRU5ErkJggg=="></button>
+<!--         <button id="rect"><img src="assets/icons/rect.png"></button> -->
+        
+        <button id="spiral"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAgMAAADxkFD+AAAACVBMVEUAAAAAAAD///+D3c/SAAAAA3RSTlMA//9EUNYhAAAA1klEQVR4nHWRMc7DIAyFH0gMyc4RMvQWHMEDRlWmjFVPwSGaPUulXznl/wxJqg61BPr8BA/bAL/CqeYDlZEaBX3ub+niXDHmLm7cV8M42z7Z4SZiMCzMMhzvuTsivbyhOJ3pRQu3hLKNghcxhQeoxYbVbKeGZovQUbkOXFNIB95kYGJIf5f4spNB+ExyCV58PhCCVZcTJ00dM8ZSQ0PW8YeOsXVF/ewKhgPrD4U64JWTuvdzK+e0WbfATfVpngy/79UaPyPIhXG5UOs1+HKJ/nML29fv/APH1zFaX2xTPQAAAABJRU5ErkJggg=="></button>
+
+        <button id="fill"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMA/1uRIrUAAACNSURBVHicbc8xDsIwDIXh3ypSOkTKDdprMCAKYuAWnKESayVyNB8liAtkgwEh7Ewd6uEbItt5ho0K2d2d3H7lobk0f6681dtfbtJijnk2Jxbzwc0buZpfLopUzoVQKDNBpZpZarFRRImFLhP9kbgnmQMjxMTREnTZdvaiH5Nn9Qx3/5GppR1a8rh1zrr+RuIj6/oIoiQAAAAASUVORK5CYII="></button>
+        
+      </div>
+      <div class="row">
+        
+        
+        <button id="select"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEX///8AAABVwtN+AAAANklEQVR4nGNgwAvYy+u+H2BgAbIUoCQDnM2AIYJMMmDRhakXuwkMGKZhU4NpGtv72u8J+D0EAP25CJFl6xb6AAAAAElFTkSuQmCC"></button>
+        <button id="copy"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEX///8AAABVwtN+AAAAXElEQVR4nGNgQAbv3t97w8DQwMDAAiMZYGwGqIh19ffdLAwKDQyMMBIozsgAYjPARRjAsgwwNaiyEHEGHHpRTICJAAGaaSA1d9/vewMWB8tCAJwNETevfr8bxYcAxmIZb7EbK80AAAAASUVORK5CYII="></button>
+        <button id="undo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoAQMAAAC2MCouAAAABlBMVEX///8AAABVwtN+AAAAVElEQVR4nKXOoRWAQAwD0PBOIDsCo3Q0OlodkhXYAOQJXsMVTuAv4rvkBRjO9GmRbjSgnPQmeQAzWV9vQMhI9zQKU7SCsLt6F2qaZdMrx5ef4iNnH4eEJ4Ekf3TkAAAAAElFTkSuQmCC"></button>
+        <textarea id="input" type="text"  autocomplete="off">
+        </textarea>
+
+      </div>
+
+    </div>
+    <div id="colorPanel"></div>
+
+  </div>
+
+  <canvas id="waveform"></canvas>
+  <canvas id="playback"></canvas>
+  <canvas id="drawing"></canvas>
+  <canvas id="hud"></canvas>
+
+  <div id="tweaks"></div>
+ <button id="send"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI8AAAA9AQMAAACur6iuAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMA/1uRIrUAAAFMSURBVHic7dIxTgMxEAXQsVy4QfgCKHMFyhRR9kocACWOUrjMDeAojERBxxnc0bqLkVY7/FkvESmpwcVq/XZsz86Y6H98j6hXUy9ErOknDaBhoaBiQfbcK9aKbVAs6IyA0dYWo2pBDGqdfFS8DXVI5KrRawonxDslnG+0oiCgHXENZ1CZqYCGqCm+XxHHRtvbC1VQPAqNN9d0KK6CfKcWTilI9XK30BDGmR5jMhJOrHkKOXnZMq2NtIBeZoqbmT60gp6zUWh0bz+qjTWcQFF8NXL6OeLE/JYTCzICkcpuoUFcowfQjrag4zknTW6cCbUx0nxAcZ6oXOigOTdyJ+kUVxwSUqvkcpGFFHtn9MTl2om5E6qeWydFqonzhCSfNkZrnriFFDOa4CY22usYJaQQ0EDXYif0D3NPVmL7gDuBD77fESfeiNsvbt6fH18+grWWOzO09AAAAABJRU5ErkJggg=="></button>
+  <div id="content">
+    <text class="small"> write me a letter?</text>
+    
+    <div class="card border" id="card">
+      
+    <div class="stamp border">
+</div>
+      <div id="address">
+      <text> to: Max </text>
+      <text> from: </text>
+      </div>
+      </div>
+  </div>
+  <!--   <script src="https://replit.com/public/js/replit-badge.js" theme="dark" defer></script> -->
+
+</body>
+  
+
+
+
+</html>
